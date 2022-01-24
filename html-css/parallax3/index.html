@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
+
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            position: relative;
+            opacity: 0.65;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .bgimg-1 {
+            background-image: url("images/communication-1439187_1920.jpg");
+            min-height: 100%;
+        }
+
+        .bgimg-2 {
+            background-image: url("images/monitor-1307227_1920.jpg");
+            min-height: 400px;
+        }
+
+        .bgimg-3 {
+            background-image: url("images/network-1695480_1920.jpg");
+            min-height: 400px;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+
+
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover, .offcanvas a:focus{
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#mySidenav").click(function(){
+                $("#mySidenav").fadeOut(1000);
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+<h2>Animated Sidenav Example</h2>
+<p>Click on the element below to open the side navigation menu.</p>
+<span id="thing" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+
+
+<div class="bgimg-1">
+    <div class="caption">
+        <span class="border">SCROLL DOWN</span>
+
+    </div>
+</div>
+
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+    <h3 style="text-align:center;">Parallax Demo</h3>
+
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Log in baby!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="panel panel-login">
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <a href="#" class="active" id="login-form-link">Login</a>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <a href="#" id="register-form-link">Register</a>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <form id="login-form" action="http://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                                                    <div class="form-group">
+                                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                                    </div>
+                                                    <div class="form-group text-center">
+                                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                                        <label for="remember"> Remember Me</label>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-sm-offset-3">
+                                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="text-center">
+                                                                    <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                                                    <div class="form-group">
+                                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-sm-offset-3">
+                                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="bgimg-2">
+    <div class="caption">
+        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
+    </div>
+</div>
+
+<div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <video controls>
+            <source src="videos/mov_bbb.mp4" type="video/mp4">
+            <!--<source app="rabbit320.webm" type="video/webm"> -->
+            <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+        </video>
+    </div>
+</div>
+
+<div class="bgimg-3">
+    <div class="caption">
+        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+    </div>
+</div>
+
+<div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+    </div>
+</div>
+
+<div class="bgimg-1">
+    <div class="caption">
+        <span class="border">COOL!</span>
+    </div>
+</div>
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "20vw";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    $(function() {
+
+        $('#login-form-link').click(function(e) {
+            $("#login-form").delay(100).fadeIn(100);
+            $("#register-form").fadeOut(100);
+            $('#register-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        $('#register-form-link').click(function(e) {
+            $("#register-form").delay(100).fadeIn(100);
+            $("#login-form").fadeOut(100);
+            $('#login-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
