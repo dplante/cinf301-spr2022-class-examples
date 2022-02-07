@@ -26,14 +26,13 @@ x += 7;
 1 == true;
 1 === true;
 
-
+// Arrays
 var arr = [1, 5, 7, 3, 99];
 
 for (el of arr) {
   console.log(el);
 }
 
-// Arrays
 var a = ['dog', 'cat', 'hen'];
 a[10] = 'fox';
 a.length; // 11

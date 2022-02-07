@@ -1,0 +1,9 @@
+<script>
+  /* See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify */
+  localStorage.setItem('name', 'Dan');
+  localStorage.setItem('age', 'Ancient');
+
+  const values = {height: '6ft', 'weight':180};
+  const vals = JSON.stringify(values);
+  localStorage.setItem('str', vals);
+</script>
