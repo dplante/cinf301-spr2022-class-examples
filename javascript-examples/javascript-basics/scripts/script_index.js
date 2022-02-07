@@ -1,7 +1,7 @@
 /*
  * Immediately invokable function
  */
-(function() {
+(function () {
     var obj = {
         course: "CINF301",
         loveit: {
@@ -22,12 +22,11 @@
  */
 function myfunc() {
     let arr = [];
-    for(let i=0; i<5; i++)
-    {
+    for (let i = 0; i < 5; i++) {
         arr[i] = i + ' zee';
     }
-    //console.log(arr);
-    document.getElementById("array").innerHTML = arr.concat().toString();
+    console.log(arr);
+    document.getElementById("array").innerHTML = arr.toString();
 
     /*
      * Count number of chars in body, from
