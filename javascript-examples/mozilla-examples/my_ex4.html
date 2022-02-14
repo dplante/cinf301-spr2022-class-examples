@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>From Example 4</title>
+<!-- run in Chrome with console showing, try w/o style and then add it.-->
+
+<!-- <style>
+body { background-color: darkblue; }
+p { font-face: Arial; font-size: 10pt; margin-left: .125in; }
+#lumpy { display: none; }
+</style> -->
+
+<script>
+var ss = document.styleSheets;
+
+for(var i = 0; i < ss.length; i++) {
+  for(var j = 0; j < ss[i].cssRules.length; j++) {
+    console.log( ss[i].cssRules[j].selectorText + "\n" );
+  }
+}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
