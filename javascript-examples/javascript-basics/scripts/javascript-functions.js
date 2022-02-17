@@ -1,4 +1,8 @@
 /*
+ * See: https://geekflare.com/popular-javascript-functions/
+ * for a number of functions that are particularly useful 
+ * javascript.
+ * 
  * Note the "functional programming" strength of javascript!
  *
  * Important javascript functions:
@@ -42,3 +46,13 @@ results = things.filter((n) => typeof n === 'string');
 // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 // See "syntax" in above link
 results = [42, 33, 11, 88, -3, 0, 81, -81, 44].reduce((prev, next) => Math.min(prev, next), 0);
+
+// Another example with details
+[42, 33, 11, 88, -3, 0, 81, -81, 44].reduce(
+    (prev, next, index, array) => {
+        if (index < 4) {
+            return Math.min(prev, next);
+        }
+        return array[4];
+
+    });
