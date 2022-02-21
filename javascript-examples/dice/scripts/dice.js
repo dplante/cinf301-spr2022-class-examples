@@ -5,20 +5,6 @@
 
 let gameNum = 1;
 
-// document.getElementById('buttn').onclick = function () {
-//     let maxValue = 1;
-
-//     for (let i = 0; i < dice.numberOfDice; i++) {
-//         dice.dice[i].roll();
-//         if (dice.dice[i].top > maxValue) {
-//             maxValue = dice.dice[i].top;
-//         }
-//         document.getElementById('d' + i).src = dice.dice[i].img.src;
-//     }
-//     updateTable(maxValue);
-
-// };
-
 document.getElementById('buttn').onclick = function () {
     dice.dice.forEach((die, index) => {
         die.roll();
@@ -51,8 +37,7 @@ function dieClicked(event) {
  * @param val
  */
 let updateTable = function (val) {
-    let scores = document.getElementById('tableScores');
-    let row = scores.insertRow(gameNum);
+    let row = document.getElementById('tableScores').insertRow(gameNum);
     gameNum++;
     row.insertCell(0).innerHTML = 'Game #' + gameNum;
     row.insertCell(1).innerHTML = 'Max Roll: ' + val.toString();
