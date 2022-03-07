@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /*
+         * The main App class (it could be called something other than App) 
+         * that shows how props and state are used in a React component;
+         * as noted repeatedly in class, we will use Hooks instead, as 
+         * Javascript classes are not really classes at all, and the context
+         * of "this" is a bit of a challenge to manage.
+         */
+        class App extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { name: 'Julie', age: 'aging well', weight: 180 };
+            }
+
+            clicker(name) {
+                this.setState({ name: name });
+                if (name.localeCompare("Daniel") === 0) {
+                    this.setState({ age: 'TOO OLD' });
+                } else {
+                    this.setState({ age: 'not as old as Daniel' });
+                }
+            }
+
+            renderDisplay(data) {
+                return <Display stats={data} />;
+            }
+
+            renderButton() {
+                return (
+                    <button onClick={() => this.clicker(document.getElementById('fname').value)}>
+                        {this.state.name}
+                    </button>
+                );
+            }
+
+            render() {
+                return (
+                    <div>
+                        <div>Enter a name: <input type="text" id="fname" name="fname" /></div>
+                        <div>{this.renderDisplay(this.state)}</div>
+                        <div>{this.renderButton("Button")}</div>
+                    </div>
+                );
+            }
+        }
+
+        /*
+         * A simple class that just renders the React component from this.props
+         */
+        class Display extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1>Hello {this.props.stats.name}</h1>
+                        <h1>You are {this.props.stats.age}</h1>
+                        <h1>Your weight is {this.props.stats.weight}</h1>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<App name={"Dan"} />, document.getElementById('root'));
+    </script>
+
+</body>
+
+</html>
