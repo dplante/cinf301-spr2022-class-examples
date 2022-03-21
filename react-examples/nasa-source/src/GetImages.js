@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function GetImages() {
-  const [keyValue, setKey] = useState(1);
+  //const [keyValue, setKey] = useState(1);
   const [query, setQuery] = useState("");
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -30,6 +30,9 @@ function GetImages() {
         </label>
       </form>
       <h2>Query: {query}</h2>
+
+      {/* See how this below is a problem because useEffect not done */}
+      {/* {photos[0].href} */}
 
       {loading && photos.map(entry => (
         <li>
