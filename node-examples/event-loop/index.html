@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- See: https://www.youtube.com/watch?v=8aGhZQkoFbQ for great video explanation of event loop -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      function foo() {
+        throw new Error("Call stack popped");
+      }
+      function bar() {
+        foo();
+      }
+      function stuff() {
+        bar();
+      }
+      stuff();
+    </script>
+
+  </body>
+
+</html>
+
