@@ -1,0 +1,5 @@
+- create controllers folder (along with models and routes folders)
+
+- in index.js
+const noteRoute = require('./routes/note.routes.js');
+app.use('/api', noteRoute);
